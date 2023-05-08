@@ -5,11 +5,21 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+/*
 type User5 struct {
 	Id         int64             `form:"id"`
 	Name       string            `form:"name"`
 	Address    []string          `form:"address"`
 	AddressMap map[string]string `form:"addressMap" binding:"required"`
+}
+*/
+
+// 如果使用JSON接受值，那么不应用form，应用json
+type User5 struct {
+	Id         int64             `json:"id"`
+	Name       string            `json:"name"`
+	Address    []string          `json:"addressss"`
+	AddressMap map[string]string `json:"addressMap" binding:"required"`
 }
 
 func main() {
