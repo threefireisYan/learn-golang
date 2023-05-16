@@ -38,6 +38,6 @@ func main() {
 	fmt.Println(duke)
 	fmt.Println("lily", lily.name, lily.gendes, lily.score, lily.age)
 	str := &lily
-	fmt.Println("指针str.name：", str.age, str.name)
-	fmt.Println("指针(*str).name：", (*str).name)
+	fmt.Println("str.name：", str.age, str.name)
+	fmt.Println("(*str).name：", (*str).name)
 }
