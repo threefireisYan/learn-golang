@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"strconv"
 )
 
 func main() {
@@ -21,6 +22,42 @@ func main() {
 	//如下就会报错
 	//str = "111"
 	//i = int64(str)
+
+	//字符串与其他数据类型的转换
+	//str 转 int
+	newStr := "1"
+	//使用strconv函数进行转义
+	intValue, _ := strconv.Atoi(newStr)
+	fmt.Printf("str类型转换int：%T,%d \n", intValue, intValue)
+
+	//int 转 str
+	intValue2 := 1
+	newStr2 := strconv.Itoa(intValue2)
+	fmt.Printf("int类型转换str：%T,%s\n", newStr2, newStr2)
+
+	//string 转 float
+	str1 := "3.14233"
+	floatValue, _ := strconv.ParseFloat(str1, 64)
+	fmt.Printf("str转float64:%T,%f", floatValue, floatValue)
+
+	//float 转 string
+	floatValue2 := 3.12314
+	floatStr := strconv.FormatFloat(floatValue2, 'f', 2, 64)
+	//4个参数，	1：要转换的浮点数
+	//			2：格式标记（b、e、E、f、g、G）
+	//			3：精度
+	//			4：指定浮点类型（32：float32、64：float64）
+	//	格式标记：
+	//		'b':(-dddbp±ddd,二进制指数)
+	//		'e':(-d.dddbe±ddd,十进制指数)
+	//		'E':(-d.dddbE±ddd,十进制指数)
+	//		'f':(-dddbp±ddd,没有指数)
+	//		'g':('e':大指数,'f':其他情况)
+	//		'G':('E':大指数,'f':其他情况)
+	//
+	//	如果格式标记为 'e','E'和'f',则prec表示小数点后的数字位数
+	//	如果格式标记为 'g','G'，则prec表示总的数字尾数（整数部分+小数部门）
+	fmt.Printf("float64转str:%T,%s", floatStr, floatStr)
 
 	//	输出各数值范围
 	fmt.Println("int8 range:", math.MinInt8, math.MaxInt8)
