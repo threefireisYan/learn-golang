@@ -14,6 +14,7 @@ func main() {
 		age:  17,
 	}
 
+	fmt.Println("名字：", zhangsan)
 	fmt.Println("名字：", zhangsan.name)
 	fmt.Println("年龄：", zhangsan.age)
 
