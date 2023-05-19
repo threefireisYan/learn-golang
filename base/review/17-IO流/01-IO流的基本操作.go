@@ -16,6 +16,7 @@ func main() {
 
 		n, err := reader.Read(p)
 		if err != nil {
+			//io.EOF 来表示输入流已经读取到头
 			if err == io.EOF {
 				log.Printf("读完了:eof错误 :%d", n)
 				break
