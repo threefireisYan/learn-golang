@@ -48,5 +48,5 @@ func re() {
 }
 
 func main() {
-	re()
+	wr()
 }
