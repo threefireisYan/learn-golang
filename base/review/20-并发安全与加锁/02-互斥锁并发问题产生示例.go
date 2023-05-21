@@ -17,6 +17,7 @@ func add2() {
 	for i := 0; i < 5000; i++ {
 		mx.Lock()
 		x1 = x1 + 1
+		fmt.Println(x1)
 		mx.Unlock()
 	}
 	//等待值-1
